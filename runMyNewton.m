@@ -1,8 +1,8 @@
 % Other m-files required: myNewton.m, myFunc.m
-% Subfunctions: myNewton, myFunc, dmyFunc (optional)
+% Subfunctions: myNewton, myPoly, dmyPoly (optional)
 % MAT-files required: none
 %
-% See also: myNewton, numDiff, myFunc, dmyFunc
+% See also: myNewton, numDiff, myPoly, dmyPoly
 % Author: Maurice Tonn
 % Palmenwaldstra�e 50, 73733 Esslingen
 % email: mauricetonn@gmail.com
@@ -12,4 +12,4 @@
 clear; clc; close all;
 
 %% call function
-[xZero, abortFlag, iters] = myNewton('function', @myFunc, 'livePlot', 'on')
+[xZero, abortFlag, iters] = myNewton('function', @myPoly, 'livePlot', 'on')
