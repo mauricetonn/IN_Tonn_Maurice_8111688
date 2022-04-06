@@ -1,6 +1,6 @@
 function yAprox = numDiff(func, x, method)
-%numDiff - calculate value of derivative at point x of function func
-%with three methods: Vorwaerts-, Rueckwaerts & Zentraldifferenzieren
+% numDiff - calculate value of derivative at point x of function func
+% with three methods: Vorwaerts-, Rueckwaerts & Zentraldifferenzieren
 %
 % Syntax:  y = numDiff(func, x, method)
 %
