@@ -13,7 +13,7 @@ function yAprox = numDiff(func, x, method)
 %    y := y value of the derivative at x
 %
 % Example: 
-%    y = numDiff(@myFunc, 9, 'forward')
+%    y = numDiff(@myPoly, 9, 'forward')
 %
 % Other m-files required: none
 % Subfunctions: none
