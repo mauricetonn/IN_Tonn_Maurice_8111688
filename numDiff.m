@@ -22,7 +22,7 @@ function yAprox = numDiff(func, x, method)
 % See also: myNewton
 % Author: Maurice Tonn
 % Palmenwaldstraße 50, 73733 Esslingen
-% email: maruicetonn@gmail.com  
+% email: mauricetonn@gmail.com  
 % April 2022; Last revision: 05-April-2022
 %------------- BEGIN CODE --------------
 %% Forward
