@@ -1,5 +1,5 @@
 function y = myPoly(x)
-%myFunc - calculates y value from x value
+%myPoly - calculates y value from x value
 %
 % Syntax:  y = myPoly(x)
 %

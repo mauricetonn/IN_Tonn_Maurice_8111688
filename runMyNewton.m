@@ -1,4 +1,4 @@
-% Other m-files required: myNewton.m, myFunc.m
+% Other m-files required: myNewton.m, myPoly.m
 % Subfunctions: myNewton, myPoly, dmyPoly (optional)
 % MAT-files required: none
 %
