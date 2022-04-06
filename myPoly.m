@@ -1,7 +1,7 @@
-function y = myFunc(x)
+function y = myPoly(x)
 %myFunc - calculates y value from x value
 %
-% Syntax:  y = myFunc(x)
+% Syntax:  y = myPoly(x)
 %
 % Inputs:
 %    x := x value
@@ -16,7 +16,7 @@ function y = myFunc(x)
 % Subfunctions: none
 % MAT-files required: none
 %
-% See also: dmyFunc
+% See also: dmyPoly
 % Author: Maurice Tonn
 % Palmenwaldstraße 50, 73733 Esslingen
 % email: mauricetonn@gmail.com
