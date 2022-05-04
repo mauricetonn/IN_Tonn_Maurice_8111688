@@ -44,7 +44,15 @@ classdef Automobilfederung < handle
             y = [0; 0; 0; 0];
             for i = 1:2:nargin-1
                 % ========= YOUR CODE HERE =========
-                % perform the varargin: overwrite the defaults
+                if strcmp(varargin{i},'t0')
+                    t = varargin{i+1};
+                elseif strcmp(varargin{i},'tfinal')
+                    tfinal = varargin{i+1};
+                elseif strcmp(varargin{i},'stepsize')
+                    h = varargin{i+1};
+                elseif strcmp(varargin{i},'y0')
+                    y = varargin{i+1};
+                end
             end
             tout = zeros(ceil((tfinal-t)/h)+1,1);
             yout = zeros(ceil((tfinal-t)/h)+1,length(y));
@@ -55,11 +63,18 @@ classdef Automobilfederung < handle
                 step = step + 1;
                 if t + h > tfinal
                     % ========= YOUR CODE HERE =========
-                    % h = 
+                    h = tfinal - t;
                 end
                 % ========= YOUR CODE HERE =========
                 % calculate the slopes
+                k1 = (obj.rhs(t, y))';
+                k2 = (obj.rhs(t+(h/2), y+(h/2)*k1))';
+                k3 = (obj.rhs(t+(h/2), y+(h/2)*k2))';
+                k4 = (obj.rhs(t + h, y+h*k3))';
+                
                 % calculate the ynew
+                ynew = y + ((1/6) * k1 + (1/3) * k2 + (1/3) * k3 + (1/6) * k4) * h;
+
                 t = t + h;
                 y = ynew;
                 tout(step) = t;
@@ -90,11 +105,14 @@ classdef Automobilfederung < handle
     methods (Access = private)
         function calcInputMatixB(obj)
             % ========= YOUR CODE HERE =========
-            % obj.B = 
+            obj.B = [0; 0; 0; obj.c1 / obj.m1];
         end
         function calcSystemMartixA(obj)
             % ========= YOUR CODE HERE =========
-            % obj.A = 
+            obj.A = [0,                     1,                  0,                              0;
+                     -(obj.c2 / obj.m2),    -(obj.d2 / obj.m2), (obj.c2 / obj.m2),              (obj.d2 / obj.m2);
+                     0,                     0                   0                               1;
+                     (obj.c2 / obj.m1),     (obj.d2 / obj.m1),  -((obj.c1 + obj.c2) / obj.m1),  -(obj.d2 / obj.m1)];
         end
         function xdot = rhs(obj, t, x)
             x = x(:);
